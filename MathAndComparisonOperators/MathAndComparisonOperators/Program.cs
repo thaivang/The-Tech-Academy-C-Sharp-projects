@@ -40,6 +40,19 @@ namespace MathAndComparisonOperators
             int remainder = 10 % 2; //even
             Console.WriteLine(remainder);
             Console.ReadLine();
+
+            //------Comaprison operators------
+
+            bool trueorfalse = 12 > 5;
+            Console.Write(trueorfalse.ToString());
+            Console.ReadLine();
+
+            //---Using bool operator to test for values >=, <=, !=, ==
+            int roomTemperature = 70;
+            int currentTemperature = 70;
+            bool isWarm = currentTemperature >= roomTemperature;
+            Console.WriteLine(isWarm);
+            Console.ReadLine();
         }
     }
 }
