@@ -10,7 +10,7 @@ namespace C_Sharp_Operator_Exercise
             Console.WriteLine("Please enter a number that will be multiply by 50: ");
             try
             {
-                int userNumber1 = Convert.ToInt32(Console.ReadLine());
+                ulong userNumber1 = Convert.ToUInt64(Console.ReadLine());
                 Console.WriteLine("Your number multiply by 50 is: " + userNumber1 * 50);
                 Console.ReadLine();
             }
