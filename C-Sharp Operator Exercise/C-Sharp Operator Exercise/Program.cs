@@ -52,7 +52,7 @@ namespace C_Sharp_Operator_Exercise
             Console.WriteLine("please enter a number that will check if it is greater than 50: ");
             try
             {
-                float usernumber4 = float.Parse(Console.ReadLine());
+                int usernumber4 = Convert.ToInt32(Console.ReadLine());
                 int setvalue = 50;
                 bool value = usernumber4 > setvalue;
                 Console.WriteLine(value);
@@ -67,8 +67,8 @@ namespace C_Sharp_Operator_Exercise
             Console.WriteLine("please enter a number that will divide by 7 and return a remainder: ");
             try
             {
-                double usernumber5 = double.Parse(Console.ReadLine());
-                double newnumber3 = usernumber5 % 7;
+                int usernumber5 = Convert.ToInt32(Console.ReadLine());
+                int newnumber3 = usernumber5 % 7;
                 Console.WriteLine("your number divided by 7 gives a remainder of: " + newnumber3);
             }
             catch(FormatException)
