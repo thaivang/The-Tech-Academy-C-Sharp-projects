@@ -41,7 +41,7 @@ namespace Package_Express
             else
             {
                 int total = dimensions * weight / 100;
-                Console.WriteLine("Your total is: $" + total);
+                Console.WriteLine("Your total is: $" + total + " Thankyou!");
             }
             
             Console.ReadLine();
