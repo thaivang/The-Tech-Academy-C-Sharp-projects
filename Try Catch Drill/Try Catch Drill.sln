@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Try Catch Drill", "Try Catch Drill\Try Catch Drill.csproj", "{DE4E8A61-6CDA-4D48-81C0-73F5324B9CF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE4E8A61-6CDA-4D48-81C0-73F5324B9CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4E8A61-6CDA-4D48-81C0-73F5324B9CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4E8A61-6CDA-4D48-81C0-73F5324B9CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4E8A61-6CDA-4D48-81C0-73F5324B9CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23767473-5B82-452A-A393-B98D3E3F232D}
+	EndGlobalSection
+EndGlobal
