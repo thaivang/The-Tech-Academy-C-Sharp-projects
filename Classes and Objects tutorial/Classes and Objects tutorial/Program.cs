@@ -12,6 +12,8 @@ namespace Classes_and_Objects_tutorial
         {
             Deck deck = new Deck(); //Instantiate a object and assigned it to variable deck, empty object Deck
             deck = Shuffle(deck); //reassign values to deck from - return deck statement below method Deck shuffle
+            // Comment above to to have deck in order
+
 
             foreach (Card card in deck.Cards)
             {
