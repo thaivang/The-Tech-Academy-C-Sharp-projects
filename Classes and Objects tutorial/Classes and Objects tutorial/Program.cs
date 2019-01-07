@@ -11,8 +11,8 @@ namespace Classes_and_Objects_tutorial
         static void Main(string[] args)
         {
             Deck deck = new Deck(); //Instantiate a object and assigned it to variable deck, empty object Deck
-            deck = Shuffle(deck); //reassign values to deck from - return deck statement below method Deck shuffle
-            // Comment above to to have deck in order
+            deck = Shuffle(deck); //reassign values to deck from - return deck statement below method Deck shuffle on comment 2
+                                  // Comment in "deck = Shuffle(deck);" to have deck in order
 
 
             foreach (Card card in deck.Cards)
@@ -44,7 +44,7 @@ namespace Classes_and_Objects_tutorial
 
             }
             deck.Cards = TempList;
-            return deck;
+            return deck;//comment 2
         }
     }
 }
