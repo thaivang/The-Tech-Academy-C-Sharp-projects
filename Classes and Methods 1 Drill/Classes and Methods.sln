@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes and Methods Drill", "Classes and Methods Drill\Classes and Methods Drill.csproj", "{EC34A593-FD60-4AB8-8D21-AA3F3B495D03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes and Methods", "Classes and Methods\Classes and Methods.csproj", "{1762D507-396C-4E59-A39D-7F03CB887D3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC34A593-FD60-4AB8-8D21-AA3F3B495D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC34A593-FD60-4AB8-8D21-AA3F3B495D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC34A593-FD60-4AB8-8D21-AA3F3B495D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC34A593-FD60-4AB8-8D21-AA3F3B495D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1762D507-396C-4E59-A39D-7F03CB887D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1762D507-396C-4E59-A39D-7F03CB887D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1762D507-396C-4E59-A39D-7F03CB887D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1762D507-396C-4E59-A39D-7F03CB887D3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2CE3B77C-24D7-48E9-9757-2370E537EF75}
+		SolutionGuid = {6DC7AA0C-1E66-4F39-B32F-FF772DABE552}
 	EndGlobalSection
 EndGlobal

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Classes and Methods Drill")]
+[assembly: AssemblyTitle("Classes and Methods")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("Classes and Methods Drill")]
+[assembly: AssemblyProduct("Classes and Methods")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ec34a593-fd60-4ab8-8d21-aa3f3b495d03")]
+[assembly: Guid("1762d507-396c-4e59-a39d-7f03cb887d3d")]
 
 // Version information for an assembly consists of the following four values:
 //

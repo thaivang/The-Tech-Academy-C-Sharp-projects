@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EC34A593-FD60-4AB8-8D21-AA3F3B495D03}</ProjectGuid>
+    <ProjectGuid>{1762D507-396C-4E59-A39D-7F03CB887D3D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Classes_and_Methods_Drill</RootNamespace>
-    <AssemblyName>Classes and Methods Drill</AssemblyName>
+    <RootNamespace>Classes_and_Methods</RootNamespace>
+    <AssemblyName>Classes and Methods</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Method.cs" />
+    <Compile Include="math.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Classes_and_Methods_Drill_2
+namespace Classes_and_Methods
 {
     class math
     {

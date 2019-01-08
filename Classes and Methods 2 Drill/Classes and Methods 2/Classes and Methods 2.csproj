@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA6FC87A-A0A6-4E72-A831-385506E5CA19}</ProjectGuid>
+    <ProjectGuid>{19AA1C60-E1C6-47EC-899E-DDAD5B91B684}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Classes_and_Methods_Drill_2</RootNamespace>
-    <AssemblyName>Classes and Methods Drill 2</AssemblyName>
+    <RootNamespace>Classes_and_Methods_2</RootNamespace>
+    <AssemblyName>Classes and Methods 2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="math.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Void Method.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
