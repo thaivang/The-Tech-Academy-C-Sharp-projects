@@ -20,9 +20,9 @@ namespace Inheritance_Drill
 
             //5. Call the superclass method SayName() on the Employee object.
             Employee person = new Employee() { FirstName = "Sample", LastName = "Student" }; //instantiate the object then initialize the object
-            //call superclass method on employee object
-            person.SayName();
-            //Console.ReadLine();
+            
+            person.SayName();//call superclass method on employee object
+            Console.ReadLine();
         }
     }
 }
