@@ -8,11 +8,11 @@ namespace Abstract_Class_Drill
 {
     class Program
     {
-        public abstract class Person //abstract class 
+        public abstract class Person //abstract class are incomplete classes 
         {
-            public string FirstName;
-            public string LastName;
-            public abstract void SayName();
+            public string FirstName; //property
+            public string LastName; //property
+            public abstract void SayName();//abstract method with no curly braces, no implementation, provides any class deriv  e from it to implement it
         }
 
 
