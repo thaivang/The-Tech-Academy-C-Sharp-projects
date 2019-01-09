@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _21
 {
-    class Card
+    public class Card  //class is like recipe layout, object is what is being consumed
     {
         public Card()
         {
@@ -23,6 +23,6 @@ namespace _21
         //Public - accessible by other parts of the program
         public string Suit { get; set; } //object Suit property get; set;
         public string Face { get; set; }
-        //class is like recipe layout, object is what is being consumed
+       
     }
 }

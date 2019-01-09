@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace _21
 {
-    class Deck
+    public class Deck
     {
-        public Deck() // constructor
+        public Deck() // constructor has the default values
         {
-            Cards = new List<Card>(); //Cards referring to the class which is hy data type is not needed
-
-            //Easier solution to add all cards (52 cards) to the deck
+            Cards = new List<Card>(); //Cards referring to the class which is the data type is not needed
             List<string> Suits = new List<string>() { "Clubs", "Hearts", "Diamonds", "Spades" };
             List<string> Faces = new List<string>()
             {
@@ -23,7 +21,7 @@ namespace _21
             {
                 foreach (string suit in Suits)
                 {
-                    Card card = new Card(); //during each loop a card is created, var ccard onlt exists in the loop
+                    Card card = new Card(); //during each loop a card is created, var card only exists in the loop
                     card.Suit = suit; //assign suit property, value of suit to each element in the list Suits
                     card.Face = face;
                     Cards.Add(card); //add new card to Cards list 
@@ -34,22 +32,18 @@ namespace _21
 
         public void Shuffle(int times = 1) //shuffle Method now belongs to the object created above
         {                                 //Deck is no longer needed because it is doing everything internally
-            
             for (int i = 0; i < times; i++)
             {
-                
                 List<Card> TempList = new List<Card>();
                 Random random = new Random();
-
 
                 while (Cards.Count > 0)
                 {
                     int randomIndex = random.Next(0, Cards.Count); //get random number between 0 & 52
                     TempList.Add(Cards[randomIndex]); //add cards to the temporary deck
                     Cards.RemoveAt(randomIndex); //delete cards from the list of cards until there is no cards list
-
                 }
-                this.Cards = TempList; //"this" is referring to itself, it's own object
+                Cards = TempList; //"this" is referring to itself, it's own object
             }
         }
     }
