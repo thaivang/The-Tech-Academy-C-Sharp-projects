@@ -12,7 +12,7 @@ namespace Abstract_Class_Drill
         {
             public string FirstName; //property
             public string LastName; //property
-            public abstract void SayName();//abstract method with no curly braces, no implementation, provides any class deriv  e from it to implement it
+            public abstract void SayName();//abstract method with no curly braces, no implementation, provides any class derive from it to implement it
         }
 
 
