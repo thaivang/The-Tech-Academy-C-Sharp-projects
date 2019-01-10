@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _21
 {
-    public class TwentyOneGame : Game
+    public class TwentyOneGame : Game//, IWalkAway
     {
         //Inheritance class
         //use colon : in class name, TwentyOneGame now inherits the class Game
@@ -18,6 +18,10 @@ namespace _21
         {
             Console.WriteLine("21 Players");
             base.ListPlayers();
+        }
+        public void WalkAway(Player player)
+        {
+            throw new NotImplementedException();
         }
     }
 }

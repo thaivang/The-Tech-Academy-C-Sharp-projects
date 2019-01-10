@@ -16,16 +16,16 @@ namespace _21
             Console.ReadLine();
 
             ////21 game shuffling cards
-            //deck deck = new deck(); //instantiate a object and assigned it to variable deck, empty object deck
-            //deck.shuffle(3); //calls this method and inside the parameter add a number -deck.shuffle(3);- shuffles it 3 times
+            //Deck deck = new Deck(); //instantiate a object and assigned it to variable deck, empty object deck
+            //deck.Shuffle(3); //calls this method and inside the parameter add a number -deck.shuffle(3);- shuffles it 3 times
             //                 //calls method on itself
 
-            //foreach (card card in deck.cards)
+            //foreach (Card card in deck.Cards)
             //{
-            //    console.writeline(card.face + " of " + card.suit);
+            //    Console.WriteLine(card.Face + " of " + card.Suit);
             //}
-            //console.writeline(deck.cards.count); // cards is a property of deck & a data type of list card, so list (cards) has a property of count
-            //console.readline();
+            //Console.WriteLine(deck.Cards.Count); // cards is a property of deck & a data type of list card, so list (cards) has a property of count
+            //Console.ReadLine();
 
             //============ ignore code below 
 

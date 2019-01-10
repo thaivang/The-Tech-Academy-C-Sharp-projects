@@ -24,7 +24,7 @@ namespace _21
                     Card card = new Card(); //during each loop a card is created, var card only exists in the loop
                     card.Suit = suit; //assign suit property, value of suit to each element in the list Suits
                     card.Face = face;
-                    Cards.Add(card); //add new card to Cards list 
+                    Cards.Add(card); //add new card to Cards list  
                 }
             }
         }
