@@ -27,7 +27,7 @@ namespace Array_and_Lists_drill
             Console.ReadLine();
 
             //EX 2
-            // Create a nint array and ask user for index input and display value to the screen
+            // Create a int array and ask user for index input and display value to the screen
 
             Console.WriteLine("=== Excercise 2 ===");
             int[] numArray = { 0, 1, 2, 3, 4, 5 };
