@@ -15,7 +15,8 @@ namespace Abstract_Class_Drill
 
     public class Employees : Person , IQuittable //inheritance class
     {
-        public void Quit()
+        
+        public void Quit()//implement method of interface IQuittable
         {
             Console.WriteLine("Goodbye");
         }
@@ -24,8 +25,7 @@ namespace Abstract_Class_Drill
             Console.WriteLine(FirstName + " " + LastName); //prints to console
         }
     }
-
-    //interface can only have a declaration like property and not an implementation
+     //interface can only have a declaration like property and not an implementation
     //all methods in interface are abstract
-    //can't instantiate, implemented by a class must take methods in interface, gets around multiple inheritance
+   //can't instantiate, implemented by a class must take methods in interface, gets around multiple inheritance
 }
