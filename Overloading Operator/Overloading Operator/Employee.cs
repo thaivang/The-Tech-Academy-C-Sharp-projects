@@ -8,28 +8,13 @@ namespace Overloading_Operator
 {
     class Employee
     {
-        public int id;
+        public int Id { get; set; }//decalred property must be inside the class Employee
 
-        //public override bool Equals(object obj)
-        //{
-        //    Employee e = obj as Employee;
-        //    if (e != null)
-        //    {
-        //        return e == this;
-        //    }
-        //    return false;
-        //}
-
-        //public override int GetHashCode()
-        //{
-        //    return id.GetHashCode();
-        //}
-
-        public static bool operator ==(Employee person1, Employee person2) //overloading operator name 
+        public static bool operator ==(Employee person1, Employee person2) //overloading operator, checks if person1 id is equal to person2 id
         {
-            if (person1.id == person2.id)
+            if (person1==person2)
             {
-                return true;
+                return true;  //1 = 2 false
             }
             else
             {
@@ -38,7 +23,14 @@ namespace Overloading_Operator
         }
         public static bool operator !=(Employee person1, Employee person2)
         {
-            return false;
+            if (person1!=person2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

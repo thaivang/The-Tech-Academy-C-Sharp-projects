@@ -10,13 +10,20 @@ namespace Overloading_Operator
     {
         static void Main(string[] args)
         {
-            //create an instance of a class and then call the method
-            Employee person1 = new Employee();
-            person1.id = 1;
-            Employee person2 = new Employee();
-            person2.id = 1;
 
-            Console.WriteLine(person1.id==person2.id);
+
+            Employee person1 = new Employee //create an instance of a class and then call the method
+            {
+                Id = 1 //object.property
+            };  
+
+            Employee person2 = new Employee
+            {
+                Id = 2
+            };
+
+            //Console.WriteLine(person1!=person2);
+            Console.WriteLine(person1==person2); //prints out result 
             Console.ReadLine();
         }
     }
