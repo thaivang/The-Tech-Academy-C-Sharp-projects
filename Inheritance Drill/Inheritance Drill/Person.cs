@@ -8,8 +8,8 @@ namespace Inheritance_Drill
 {
     class Person
     {
-        public string FirstName {get; set;} //property
-        public string LastName { get; set;} //property
+        public string FirstName;// {get; set;} //property
+        public string LastName;// {get; set;} //property
 
         public void SayName () //superclass method
         {
