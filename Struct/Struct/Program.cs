@@ -15,16 +15,21 @@ namespace Struct
         //3. Print this amount to the console.
 
 
-        public struct Number //Create struct
+        public struct Number //struct encapsulates related data types
         {
-            public decimal Amount { get; set; }
+            public decimal Amount;
         }
         static void Main(string[] args)
         {
-            Number newObj = new Number(); //instatiate a object
-            newObj.Amount  = 25.5m; //assign object a  
-            Console.WriteLine(newObj.Amount);
+            Number price; //declare object price as Number type
+            //Number newObj = new Number(); //instatiate a object
+            //newObj.Amount  = 25.5m; //assign object a value 
+            price.Amount = 25.5m; // specification
+
+            Console.WriteLine(price.Amount);
             Console.ReadLine();
         }
+
+        //struct encapsulates related variables Ex. public struct book with properties { decimal price, string title, string, author}
     }
 }
