@@ -9,7 +9,7 @@ namespace _21
     interface IWalkAway
     {
         //all interface is public 
-        //any class that has inheritance IWalkAway must take in the method below
+        //any class that has inheritance IWalkAway must take - in the method below
         void WalkAway(Player player);
     }
 }
