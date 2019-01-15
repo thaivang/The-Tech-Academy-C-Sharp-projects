@@ -22,7 +22,7 @@ namespace Lambda_Expression
             List<Employee> Employee = new List<Employee>()// List is type Employee so all properties can be addes to the list 
             {
             new Employee() { FirstName = "Joe", LastName = "Moe", Id = 1 },// Initialize list with collection initializer.
-            new Employee() { FirstName = "Joe", LastName = "Dirt", Id = 2 },// creates new objects
+            new Employee() { FirstName = "Joe", LastName = "Dirt", Id = 2 },// Creates new objects from class with properties
             new Employee() { FirstName = "Kenny", LastName = "Penny", Id = 3 },
             new Employee() { FirstName = "Jenny", LastName = "Jcpenny", Id = 4 },
             new Employee() { FirstName = "Billy", LastName = "Bob", Id = 5 },
@@ -40,7 +40,7 @@ namespace Lambda_Expression
                 if (name.FirstName == "Joe")
                 {
                     People.Add(name);
-                    Console.WriteLine("Names with " + name.FirstName + "using foreach loop");
+                    Console.WriteLine("Names with " + name.FirstName + " using foreach loop");
                 }
             }
             
@@ -49,7 +49,7 @@ namespace Lambda_Expression
             People2 = Employee.Where(x => x.FirstName == "Joe").ToList();
             foreach (Employee person in People2)
             {
-                Console.WriteLine("Names " + person.FirstName + "Added to the List using lambda");
+                Console.WriteLine("Names " + person.FirstName + " Added to the List using lambda");
             }
 
             //Employee Id > 5, Lambda 
