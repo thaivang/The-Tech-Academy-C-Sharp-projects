@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _21
+namespace Casino
 {
     public struct Card  //class is like recipe layout, object is what is being consumed
     {

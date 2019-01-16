@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _21
+namespace Casino
 {
     public abstract class Game //abstract class cannot be instantiate (object) as it can only be inherited from 
     {

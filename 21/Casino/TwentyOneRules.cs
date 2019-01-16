@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _21
+namespace Casino.TwentyOne
 {
     public class TwentyOneRules
     {
@@ -78,7 +78,7 @@ namespace _21
             int[] playerResults = GetAllPossiblehandValues(Playerhand);//all possible values for player & dealer
             int[] dealerResults = GetAllPossiblehandValues(DealerHand);
 
-            int playerScore = playerResults.Where(x => x < 22).min();//filters list of results where int < 22 but gives the largest value //video 9
+            int playerScore = playerResults.Where(x => x < 22).Max();//filters list of results where int < 22 but gives the largest value //video 9
             int dealerScore = dealerResults.Where(x => x < 22).Max();//broken above when staying (bug!) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
             if (playerScore > dealerScore) return true;
