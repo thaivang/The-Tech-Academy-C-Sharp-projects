@@ -23,17 +23,26 @@ namespace Casino.TwentyOne
             Dealer.Stay = false;
             Dealer.Deck = new Deck(); //each new game a new deck will be created to insured there is 52 cards, otherwise there is a partial deck for the nect game
             Dealer.Deck.Shuffle(); //shuffles deck for each game
-            Console.WriteLine("Place your bet!");
 
             foreach (Player player in Players)//loops through each player placing a bet
             {
-                int bet = Convert.ToInt32(Console.ReadLine());
-                bool successfullyBet = player.Bet(bet);
-                if (!successfullyBet) //successfullyBet == false
+                bool validAnswer = false;
+                int bet = 0;
+                while (!validAnswer)
                 {
-                    return;//doesn't return anything, ends the method and goes to the while loop in program.cs
+                    Console.WriteLine("Place your bet!");
+                    validAnswer = int.TryParse(Console.ReadLine(), out bet);
+                    if (!validAnswer) Console.WriteLine("Please enter digits only, no decimals.");
                 }
-                //dictionary is a collection of key value pair where player is the key and value is what they bet
+                if (bet < 0)
+                {
+                    throw new FraudException("Security! Kick this person out.");
+                }
+                bool successfullyBet = player.Bet(bet);
+                if (!successfullyBet)
+                {
+                    return;
+                }
                 Bets[player] = bet; //player object
             }
             for (int i = 0; i < 2; i++) //cards are face up, loops through twice giving each player 2 cards

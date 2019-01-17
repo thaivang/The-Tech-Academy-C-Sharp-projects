@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using Casino;
 using Casino.TwentyOne;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace _21
 {
@@ -13,11 +15,24 @@ namespace _21
     {
         static void Main(string[] args)
         {
-            const string casinoName = "Grand " + "Hotel";
+            const string casinoName = "Grand Hotel and Casino";
 
             Console.WriteLine("Welcome to the {0}. Let's start by telling me your name.", casinoName);
             string playerName = Console.ReadLine(); 
-
+            if (playerName.ToLower() == "admin")
+            {
+                List<ExceptionEntity> Exceptions = ReadExceptions();
+                foreach (var exception in Exceptions)
+                {
+                    Console.Write(exception.Id + " | ");
+                    Console.Write(exception.ExceptionType + " | ");
+                    Console.WriteLine(exception.ExceptionMessage + " | ");
+                    Console.WriteLine(exception.TimeStamp + " | ");
+                    Console.WriteLine();
+                }
+                Console.Read();
+                return;
+            }
             bool validAnswer = false;
             int bank = 0;
             while (!validAnswer)
@@ -25,13 +40,11 @@ namespace _21
                 Console.WriteLine("And how much did you bring today?");
                 validAnswer = int.TryParse(Console.ReadLine(), out bank);//assign a value and send back out result, cast from string to int using tryparse
                 //if cast doesn't succeed then it prints out zero becuase int bank = 0;
-                if (!validAnswer) Console.WriteLine("Please enter only digits only, no decimals");
+                if (!validAnswer) Console.WriteLine("Please enter only digits only, no decimals.");
             }
 
-            //Console.WriteLine("And how much money did you bring today?");
-            //int bank = Convert.ToInt32(Console.ReadLine()); //user input
+            
             Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
-
             string answer = Console.ReadLine().ToLower(); //lowers user answer if capitalize
 
             if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
@@ -52,15 +65,17 @@ namespace _21
                     {
                         game.Play();
                     }
-                    catch (FraudException)//specific exception then general exception, program runs in order from 1st catch
+                    catch (FraudException ex)//specific exception then general exception, program runs in order from 1st catch
                     {
-                        Console.WriteLine("Security! Kick this person out!");
+                        Console.WriteLine(ex.Message);
+                        UpdateDbWithException(ex);//exception object, updates db with error, knows when person is kicked 
                         Console.ReadLine();
                         return;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         Console.WriteLine("An error occured. Please contact your system administrator.");
+                        UpdateDbWithException(ex);
                         Console.ReadLine();
                         return; //ends the program using return in void method
                     }
@@ -163,6 +178,63 @@ namespace _21
             //player.Name = "Thai";
             //game += player; //parameter - method in a way
             //game -= player;
+        }
+        private static void UpdateDbWithException(Exception ex)
+        {
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TwentyOneGame;
+                                        Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;
+                                        ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            string queryString = @"INSERT INTO Exceptions (ExceptionType, ExceptionMessage, TimeStamp) VALUES 
+                                    (@ExceptionType, @ExceptionMessage, @TimeStamp)"; //map exact values, protect against SQl injection using parameterize queries
+
+            using (SqlConnection connection = new SqlConnection(connectionString)) //"Using" keyword helps controlling unmanaged code / external resources, allows you to close the connection
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@ExceptionType", SqlDbType.VarChar);//data type is SqlDbTyp.VarChar, by naming the data type you are protecting against SQL Injection
+                command.Parameters.Add("@ExceptionMessage", SqlDbType.VarChar);//parameters with data type
+                command.Parameters.Add("@TimeStamp", SqlDbType.DateTime);
+
+                command.Parameters["@ExceptionType"].Value = ex.GetType().ToString();
+                command.Parameters["@ExceptionMessage"].Value = ex.Message;
+                command.Parameters["@TimeStamp"].Value = DateTime.Now;
+
+                connection.Open();//open connection to database
+                command.ExecuteNonQuery();//insert statement because it's a nonquery
+                connection.Close();
+            }
+        }
+        private static List<ExceptionEntity> ReadExceptions()//queries all database and displays all exceptions
+        {
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TwentyOneGame;
+                                        Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;
+                                        ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            string queryString = @"Select Id, ExceptionType, ExceptionMessage, TimeStamp From Exceptions";
+
+            List<ExceptionEntity> Exceptions = new List<ExceptionEntity>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())//loops through each record and creates new exception entity object
+                {
+                    ExceptionEntity exception = new ExceptionEntity();//mapping back to the object
+                    exception.Id = Convert.ToInt32(reader["Id"]);//map back to object, converts SQL back to data type C#
+                    exception.ExceptionType = reader["ExceptionType"].ToString();
+                    exception.ExceptionMessage = reader["ExceptionMessage"].ToString();
+                    exception.TimeStamp = Convert.ToDateTime(reader["TimeStamp"]);
+                    Exceptions.Add(exception);//adds to list 
+                }
+                connection.Close();
+            }
+            //ADO .Net
+            return Exceptions;
         }
     }
 } 
