@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Casino;
+using Casino.TwentyOne;
 
 namespace _21
 {
@@ -10,22 +13,57 @@ namespace _21
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
-            string playerName = Console.ReadLine();
-            Console.WriteLine("And how much money did you bring today?");
-            int bank = Convert.ToInt32(Console.ReadLine()); //user input
+            const string casinoName = "Grand " + "Hotel";
+
+            Console.WriteLine("Welcome to the {0}. Let's start by telling me your name.", casinoName);
+            string playerName = Console.ReadLine(); 
+
+            bool validAnswer = false;
+            int bank = 0;
+            while (!validAnswer)
+            {
+                Console.WriteLine("And how much did you bring today?");
+                validAnswer = int.TryParse(Console.ReadLine(), out bank);//assign a value and send back out result, cast from string to int using tryparse
+                //if cast doesn't succeed then it prints out zero becuase int bank = 0;
+                if (!validAnswer) Console.WriteLine("Please enter only digits only, no decimals");
+            }
+
+            //Console.WriteLine("And how much money did you bring today?");
+            //int bank = Convert.ToInt32(Console.ReadLine()); //user input
             Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
+
             string answer = Console.ReadLine().ToLower(); //lowers user answer if capitalize
 
             if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
             {
                 Player player = new Player(playerName, bank); //Constructor new Player(parameters inside) + instantiate the class with constructor
+                player.Id = Guid.NewGuid();
+                using (StreamWriter file = new StreamWriter("C:\\log.txt", true)) //dispose of memory when done using, that's what the using statement is
+                {
+                    file.WriteLine(player.Id);
+                }
+                //GUID
                 Game game = new TwentyOneGame(); //polymorphism
                 game += player;
                 player.IsActivelyPlaying = true; //checks if player is actively playing 
                 while (player.IsActivelyPlaying && player.Balance > 0) //checks is player wants to play & balance is over 0  //video 1 & 2
                 {
-                    game.Play();
+                    try
+                    {
+                        game.Play();
+                    }
+                    catch (FraudException)//specific exception then general exception, program runs in order from 1st catch
+                    {
+                        Console.WriteLine("Security! Kick this person out!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("An error occured. Please contact your system administrator.");
+                        Console.ReadLine();
+                        return; //ends the program using return in void method
+                    }
                 }
                 game -= player; //removes player when exiting game
                 Console.WriteLine("Thank you for playing!");

@@ -8,8 +8,11 @@ namespace Casino
 {
     public class Player
     {
+        public Player(string name) : this(name, 100)//reusing the previous constructor for this one, name is Name and is no balance is provided then the balance is 100
+        {//this called constructor chaining^
+        }
         //Constructors go on top of the class
-        
+
         public Player(string name, int beginningBalance) //constructor that takes the two parameters and assigning them to the property *1
         {
             Hand = new List<Card>(); //initialize List
@@ -23,7 +26,7 @@ namespace Casino
         public string Name { get; set; }
         public bool IsActivelyPlaying { get; set; }
         public bool Stay { get; set; }
-
+        public Guid Id { get; set; }
 
         public bool Bet(int amount)//ask for player amount
         {
