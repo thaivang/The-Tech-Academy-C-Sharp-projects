@@ -23,11 +23,23 @@ namespace Casino.TwentyOne
             Dealer.Stay = false;
             Dealer.Deck = new Deck(); //each new game a new deck will be created to insured there is 52 cards, otherwise there is a partial deck for the nect game
             Dealer.Deck.Shuffle(); //shuffles deck for each game
-            Console.WriteLine("Place your bet!");
 
             foreach (Player player in Players)//loops through each player placing a bet
             {
-                int bet = Convert.ToInt32(Console.ReadLine());
+                bool validAnswer = false;
+                int bet = 0;
+                while (!validAnswer)
+                {
+                    Console.WriteLine("Place your bet!");
+                    validAnswer = int.TryParse(Console.ReadLine(), out bet);
+                    if (!validAnswer) Console.WriteLine("Please enter digits only, no decimals.");
+                }
+                //int bet = Convert.ToInt32(Console.ReadLine());
+
+                if (bet < 0)
+                {
+                    throw new FraudException();
+                }
                 bool successfullyBet = player.Bet(bet);
                 if (!successfullyBet) //successfullyBet == false
                 {
