@@ -1,0 +1,57 @@
+﻿<div class="row no-gutters m-2">
+    <div class="card col-sm-12 col-md-10 col-lg-4 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5>Welcome to Auto Life</h5>
+            <h5 class="m-0">Need a Quote? You could save 16% or more!</h5>
+        </div>
+        <div class="card-body">
+            <h5>Please enter your credentials below</h5>
+            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))//controller endpoint in () when called
+            {//attributes inside()
+            <div class="row no-gutters">
+                <div class="form-group col-md-12 text-center">
+                    <h5>First Name</h5>
+                    <input name="FirstName" type="text" class="form-control" /> @*Input name must be the same as the parameters passed in SignUp otherwise error*@
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>Last Name</h5>
+                    <input name="LastName" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>Email Address</h5>
+                    <input name="EmailAddress" type="email" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>Date of Birth</h5>
+                    <input name="DateOfBirth" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>Model Year</h5>
+                    <input name="CarYear" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>CarMake</h5>
+                    <input name="CarMake" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>CarModel</h5>
+                    <input name="CarModel" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>Do you have any DUIs?</h5>
+                    <input name="DUI" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>Total Speeding Tickets</h5>
+                    <input name="SpeedingTickets" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <h5>Would you like full coverage or liability? Type in full coverage or liability</h5>
+                    <input name="FullCoverageLiability" type="text" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+            </div>
+            }
+        </div>
+    </div>
+</div> 
