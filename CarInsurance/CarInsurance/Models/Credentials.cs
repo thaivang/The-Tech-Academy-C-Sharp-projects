@@ -16,7 +16,7 @@ namespace CarInsurance.Models
         public string CarModel { get; set; }
         public string DUI { get; set; }
         public int SpeedingTickets { get; set; }
-        public string FullcoverageLiability { get; set; }
-        public int Quotes { get; set; }
+        public int FullcoverageLiability { get; set; }
+        public decimal Quotes { get; set; }
     }
 }
